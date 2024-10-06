@@ -1,4 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Página cargada y lista.');
+    console.log('');
     // Puedes agregar más funcionalidades aquí
 });
