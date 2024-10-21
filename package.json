@@ -1,20 +1,20 @@
 {
-  "name": "fundacionjc",
+  "name": "profesionalesdelpueblo",
   "version": "1.0.0",
-  "description": "FJC",
+  "description": "PDP",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/julietxcalderon/FUNDACIONJC.git"
+    "url": "git+https://github.com/julietxcalderon/PROFESIONALESDELPUEBLO.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/julietxcalderon/FUNDACIONJC/issues"
+    "url": "https://github.com/julietxcalderon/PROFESIONALESDELPUEBLO/issues"
   },
-  "homepage": "https://github.com/julietxcalderon/FUNDACIONJC#readme"
+  "homepage": "https://github.com/julietxcalderon/PROFESIONALESDELPUEBLO#readme"
 }

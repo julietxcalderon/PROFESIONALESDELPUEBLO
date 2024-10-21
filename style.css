@@ -1,20 +1,17 @@
-/* Reset de márgenes y paddings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Variables de colores y fuentes */
 :root {
     --primary-color: #fef9e6;
-    --secondary-color: #020202;
+    --secondary-color: #020202; 
     --accent-color: #ff6347;
-    --font-family-primary: "Playfair Display", "Playfair", sans-serif;
+    --font-family-primary: "Arial", sans-serif;
     --font-family-secondary: "Arial", sans-serif;
 }
 
-/* Animación de fade-in */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -26,7 +23,6 @@
     }
 }
 
-/* Animación de slide-in */
 @keyframes slideIn {
     from {
         transform: translateX(-100%);
@@ -40,25 +36,27 @@ body {
     font-family: var(--font-family-primary);
     line-height: 1.6;
     background-color: var(--secondary-color);
-    color: #333;
-    animation: fadeIn 1s ease-in-out;
+    color: #ffffff; 
+    animation: fadeIn 1s ease;
 }
 
-h1, h2 {
-    animation: fadeIn 1s ease-in-out;
+h1, h2, h3 {
+    font-family: var(--font-family-secondary); 
+    animation: fadeIn 1s ease;
 }
 
 h1 {
     font-size: 3em;
     margin-bottom: 0.5em;
     margin-top: 1em;
+    font-family: "Playfair Display";
 }
 
 h2 {
-    font-style: italic;
     margin-bottom: 2rem;
-    font-size: 2.5em;
+    font-size: 3em;
     color: var(--primary-color);
+    font-family: "Playfair Display";
 }
 
 header {
@@ -73,7 +71,7 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    animation: fadeIn 1.5s ease-in-out;
+    animation: fadeIn 1.5s ease;
 }
 
 nav ul li {
@@ -94,7 +92,6 @@ nav ul li a:hover {
     border-bottom: 2px solid var(--accent-color);
 }
 
-/* Subrayado animado en el hover */
 nav ul li a::after {
     content: '';
     display: block;
@@ -111,8 +108,9 @@ nav ul li a:hover::after {
 .logx img {
     max-width: 50%;
     height: auto;
-    margin-top: 3rem;
-    animation: fadeIn 2s ease-in-out;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    animation: fadeIn 2s ease;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -121,36 +119,69 @@ nav ul li a:hover::after {
     filter: brightness(1.2);
 }
 
-/* Estilos para el contenido principal */
 main {
     padding: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
-    animation: fadeIn 1.5s ease-in-out;
+    animation: fadeIn 1.5s ease;
 }
 
-#bienvenida {
+.service-section {
     background-color: var(--primary-color);
     padding: 20px;
     margin-bottom: 2rem;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 2s ease-in-out;
+    animation: fadeIn 2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-section h3 {
+    font-size: 1.8em;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.service-section p {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+}
+
+button, .btn {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 1.5s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover, .btn:hover {
+    background-color: darken(var(--accent-color), 10%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 footer {
-    background-color: var(--secondary-color);
+    background-color: #333;
     color: var(--primary-color);
     text-align: center;
-    padding: 10px 0;
-    position: relative; /* Cambiado de fixed a relative para mejor responsividad */
+    padding: 20px 0;
     width: 100%;
     margin-top: 2rem;
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 1s ease;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
     main {
         grid-template-columns: 1fr;
@@ -174,7 +205,7 @@ footer {
         font-size: 2em;
     }
 
-    #bienvenida {
+    .service-section {
         padding: 15px;
     }
 }
@@ -207,48 +238,69 @@ footer {
     }
 }
 
-/* Botones con animaciones */
-button, .btn {
+form {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #888;
+    font-size: 1em;
+    font-family: var(--font-family-secondary);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: border 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+form label {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+form button[type="submit"] {
     background-color: var(--accent-color);
     color: var(--primary-color);
     border: none;
-    padding: 10px 20px;
+    padding: 12px;
     border-radius: 25px;
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-button:hover, .btn:hover {
-    background-color: darken(var(--accent-color), 10%);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Enlaces estilizados */
-a.btn-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    border-radius: 25px;
-    text-decoration: none;
+    font-size: 1.2em;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-a.btn-link:hover {
-    background-color: darken(var(--accent-color), 10%);
+form button[type="submit"]:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Animación para el mensaje */
-@keyframes desplazamiento-horizontal {
-    0% {
-        transform: translateX(-100%);
+@media (max-width: 768px) {
+    form {
+        padding: 1.5rem;
     }
-    100% {
-        transform: translateX(101%);
+
+    form button[type="submit"] {
+        font-size: 1em;
     }
 }

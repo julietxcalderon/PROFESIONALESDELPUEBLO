@@ -3,31 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FJC</title>
+    <title>PDP - Profesionales del Pueblo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Fundación</h1>
-        <h2>JULIETA CALDERON</h2>
+        <h1>PROFESIONALES</h1>
+        <h2>DEL PUEBLO</h2>
         <nav>
             <ul>
-                <li><a href="#">*Sitio en construcción*</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#reseñas">Reseñas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
         <div class="logx"><img src="/img10.png" alt="logo"></div>
     </header>
 
     <main>
-        <!-- Agrega más secciones según sea necesario -->
+        <section id="servicios">
+            <h2>Servicios</h2>
+            <div class="service-container">
+                <div class="service-card">
+                    <h3>Asesoría Legal</h3>
+                    <p>Servicio profesional de asesoría legal especializada en derecho laboral y civil.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Desarrollo Web</h3>
+                    <p>Soluciones en desarrollo web para negocios y proyectos personales.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="reseñas">
+            <h2>Reseñas</h2>
+            <div class="reviews-container">
+                <div class="review">
+                    <p>"Excelente servicio, muy profesional y confiable".</p>
+                </div>
+                <div class="review">
+                    <p>"Desarrollo web impecable, justo lo que necesitaba".</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form action="https://formspree.io/f/movqvvpe" method="POST">
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
     </main>
 
     <footer>
+        <p>&copy; 2024 Profesionales del Pueblo // #SitioEnConstrucción</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
