@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDP - Profesionales del Pueblo</title>
+    <link rel="icon" href="/img10.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,47 +12,68 @@
 </head>
 <body>
     <header>
+        <nav>
+
+            <a class="inicio" href="/">PDP</a>
+            <button class="toggle-button" id="menu-toggle">///
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="nav-links">
+                
+                <li><a href="#service-section">Servicios</a></li>
+                <li><a href="#reviews-section">Reseñas</a></li>
+                <li><a href="#contact-section">Contacto</a></li>
+            </ul>
+            
+        </nav>        
         <h1>PROFESIONALES</h1>
         <h2>DEL PUEBLO</h2>
-        <nav>
-            <ul>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#reseñas">Reseñas</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
         <div class="logx"><img src="/img10.png" alt="logo"></div>
     </header>
 
     <main>
-        <section id="servicios">
+        <section id="service-section">
             <h2>Servicios</h2>
             <div class="service-container">
                 <div class="service-card">
-                    <h3>Asesoría Legal</h3>
-                    <p>Servicio profesional de asesoría legal especializada en derecho laboral y civil.</p>
+                    <h3>Consultoría Legal</h3>
+                    <p>Asesoramiento integral para resolver cualquier consulta jurídica.</p>
                 </div>
                 <div class="service-card">
                     <h3>Desarrollo Web</h3>
-                    <p>Soluciones en desarrollo web para negocios y proyectos personales.</p>
+                    <p>Diseñamos y desarrollamos páginas web personalizadas para tu negocio.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Capacitación</h3>
+                    <p>Ofrecemos cursos y talleres para mejorar tus habilidades en diversas áreas.</p>
                 </div>
             </div>
         </section>
-
-        <section id="reseñas">
+        
+        <section id="reviews-section">
             <h2>Reseñas</h2>
             <div class="reviews-container">
                 <div class="review">
-                    <p>"Excelente servicio, muy profesional y confiable".</p>
+                    <p>"La asesoría legal que recibí fue excelente, muy profesional y clara."</p>
+                    <p>- Juan Pérez</p>
                 </div>
                 <div class="review">
-                    <p>"Desarrollo web impecable, justo lo que necesitaba".</p>
+                    <p>"El desarrollo de mi sitio web fue rápido y superó mis expectativas."</p>
+                    <p>- María Rodríguez</p>
+                </div>
+                <div class="review">
+                    <p>"Gracias a su capacitación, ahora tengo las herramientas para llevar mi negocio al siguiente nivel."</p>
+                    <p>- Ana López</p>
                 </div>
             </div>
         </section>
+        
 
-        <section id="contacto">
+        <section id="contact-section">
             <h2>Contacto</h2>
+            <p>Ponte en contacto con nosotros para más información.</p>
             <form action="https://formspree.io/f/movqvvpe" method="POST">
 
                 <label for="email">Correo Electrónico:</label>
@@ -63,10 +85,11 @@
                 <button type="submit">Enviar</button>
             </form>
         </section>
+
     </main>
 
     <footer>
-        <p>&copy; 2024 Profesionales del Pueblo // #SitioEnConstrucción</p>
+        <p>2024 PROFESIONALES DEL PUEBLO / / #SitioEnConstrucción</p>
     </footer>
 
     <script src="scripts.js"></script>

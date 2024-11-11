@@ -38,6 +38,7 @@ body {
     background-color: var(--secondary-color);
     color: #ffffff; 
     animation: fadeIn 1s ease;
+    margin: 20px;  /* Espacio alrededor de toda la página */
 }
 
 h1, h2, h3 {
@@ -50,6 +51,7 @@ h1 {
     margin-bottom: 0.5em;
     margin-top: 1em;
     font-family: "Playfair Display";
+    font-style: italic;
 }
 
 h2 {
@@ -57,6 +59,7 @@ h2 {
     font-size: 3em;
     color: var(--primary-color);
     font-family: "Playfair Display";
+    font-style: italic;
 }
 
 header {
@@ -67,10 +70,35 @@ header {
     animation: slideIn 1s ease-out;
 }
 
+.inicio {
+    font-family: "Playfair Display";
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.inicio:hover {
+    color: var(--accent-color);
+    transform: scale(1.1); 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;          
+    padding: 10px 20px;            
+    background-color: var(--secondary-color);
+}
+
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
     animation: fadeIn 1.5s ease;
 }
 
@@ -108,7 +136,7 @@ nav ul li a:hover::after {
 .logx img {
     max-width: 50%;
     height: auto;
-    margin-top: 4rem;
+    margin-top: 2rem;
     margin-bottom: 4rem;
     animation: fadeIn 2s ease;
     transition: transform 0.3s ease, filter 0.3s ease;
@@ -122,35 +150,84 @@ nav ul li a:hover::after {
 main {
     padding: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
     animation: fadeIn 1.5s ease;
 }
 
-.service-section {
+#service-section, #reviews-section {
+    padding: 2rem;
     background-color: var(--primary-color);
-    padding: 20px;
     margin-bottom: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 2s ease;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
 }
 
-.service-section:hover {
+#service-section h2, #reviews-section h2 {
+    font-size: 2em;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.service-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.service-card {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.1em;
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    font-size: 1.1em;
+    margin-bottom: 0.5rem;
+}
+
+.service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.service-section h3 {
-    font-size: 1.8em;
-    margin-bottom: 1rem;
-    color: var(--secondary-color);
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.service-section p {
+.review {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+}
+
+.review:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.review p {
     font-size: 1.2em;
-    color: var(--secondary-color);
+}
+
+.review p:last-child {
+    text-align: right;
+    font-weight: bold;
 }
 
 button, .btn {
@@ -173,8 +250,9 @@ button:hover, .btn:hover {
 }
 
 footer {
-    background-color: #333;
-    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+    font-weight: bold;
     text-align: center;
     padding: 20px 0;
     width: 100%;
@@ -184,7 +262,7 @@ footer {
 
 @media (max-width: 1024px) {
     main {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas para pantallas medianas */
     }
 }
 
@@ -205,18 +283,20 @@ footer {
         font-size: 2em;
     }
 
-    .service-section {
-        padding: 15px;
+    main {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
         font-size: 2em;
+        margin-top: 2rem;
     }
 
     h2 {
         font-size: 1.5em;
+        margin-top: 2rem;
     }
 
     nav ul li a {
@@ -248,6 +328,7 @@ form {
     gap: 1.5rem;
     max-width: 600px;
     margin: 0 auto;
+    margin-top: 2em;
 }
 
 form input[type="text"],
@@ -277,14 +358,14 @@ form select:focus {
 form label {
     font-size: 1.2em;
     color: var(--secondary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.1rem;
 }
 
 form button[type="submit"] {
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
     color: var(--primary-color);
     border: none;
-    padding: 12px;
+    padding: 10px;
     border-radius: 25px;
     cursor: pointer;
     font-size: 1.2em;
@@ -295,6 +376,27 @@ form button[type="submit"]:hover {
     transform: translateY(-3px);
 }
 
+.toggle-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+.toggle-button span {
+    background-color: var(--primary-color);
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
 @media (max-width: 768px) {
     form {
         padding: 1.5rem;
@@ -302,5 +404,33 @@ form button[type="submit"]:hover {
 
     form button[type="submit"] {
         font-size: 1em;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--secondary-color);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    nav.active ul {
+        display: block;
+    }
+
+    .toggle-button {
+        display: flex;
+
+    }
+
+    nav ul li {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 1.2em;
     }
 }
