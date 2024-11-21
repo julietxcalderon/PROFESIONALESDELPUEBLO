@@ -7,7 +7,7 @@
 :root {
     --primary-color: #fef9e6;
     --secondary-color: #020202; 
-    --accent-color: #ff6347;
+    --accent-color: #294c60;
     --font-family-primary: "Arial", sans-serif;
     --font-family-secondary: "Arial", sans-serif;
 }
@@ -144,7 +144,7 @@ nav ul li a:hover::after {
 
 .logx img:hover {
     transform: scale(1.05);
-    filter: brightness(1.2);
+    filter: brightness(1.1);
 }
 
 main {
