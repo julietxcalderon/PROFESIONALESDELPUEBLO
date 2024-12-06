@@ -8,8 +8,8 @@
     --primary-color: #fef9e6;
     --secondary-color: #020202; 
     --accent-color: #294c60;
-    --font-family-primary: "Arial", sans-serif;
-    --font-family-secondary: "Arial", sans-serif;
+    --font-family-primary: "Arial";
+    --font-family-secondary: sans-serif;
 }
 
 @keyframes fadeIn {
@@ -38,7 +38,7 @@ body {
     background-color: var(--secondary-color);
     color: #ffffff; 
     animation: fadeIn 1s ease;
-    margin: 20px;  /* Espacio alrededor de toda la página */
+    margin: 20px;
 }
 
 h1, h2, h3 {
@@ -157,7 +157,9 @@ main {
 
 #service-section, #reviews-section {
     padding: 2rem;
-    background-color: var(--primary-color);
+    color: var(--primary-color);
+    font-family: "Playfair Display";
+    background: linear-gradient(135deg, #020202, #050505);;
     margin-bottom: 2rem;
     border-radius: 8px;
 }
@@ -165,7 +167,8 @@ main {
 #service-section h2, #reviews-section h2 {
     font-size: 2em;
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    font-family: "Playfair Display";
+    color: var(--primary-color);
     text-align: center;
 }
 
@@ -177,8 +180,9 @@ main {
 
 .service-card {
     background-color: var(--secondary-color);
+    font-family: "Playfair Display";
     color: var(--primary-color);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -187,12 +191,12 @@ main {
 
 .service-card h3 {
     font-size: 1.5em;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .service-card p {
     font-size: 1.1em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .service-card:hover {
@@ -234,6 +238,7 @@ button, .btn {
     background-color: var(--accent-color);
     color: var(--primary-color);
     border: none;
+    margin-top: 0.5rem;
     padding: 10px 20px;
     border-radius: 25px;
     cursor: pointer;
@@ -262,7 +267,7 @@ footer {
 
 @media (max-width: 1024px) {
     main {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas para pantallas medianas */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -433,4 +438,35 @@ form button[type="submit"]:hover {
     nav ul li a {
         font-size: 1.2em;
     }
+}
+
+
+#cart-section {
+    background: linear-gradient(135deg, #020202, #050505);
+    border-radius: 8px;
+    color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#carrito {
+    background: linear-gradient(135deg, #020202, #050505);
+    list-style: none;
+    color: var(--primary-color);
+    padding: 0;
+    margin: 0;
+}
+
+#carrito li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    color: var(--primary-color);
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+#carrito li:hover {
+    background-color: #020202;
 }
