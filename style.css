@@ -155,11 +155,11 @@ main {
     animation: fadeIn 1.5s ease;
 }
 
-#service-section, #reviews-section {
+#service-section, #reviews-section, #cart-section, #contact-section{
     padding: 2rem;
     color: var(--primary-color);
     font-family: "Playfair Display";
-    background: linear-gradient(135deg, #020202, #050505);;
+    background: linear-gradient(135deg, #020202, #050505);
     margin-bottom: 2rem;
     border-radius: 8px;
 }
@@ -256,13 +256,14 @@ button:hover, .btn:hover {
 
 footer {
     background-color: var(--secondary-color);
-    color: var(--accent-color);
+    color: var(--primary-color);
     font-weight: bold;
     text-align: center;
     padding: 20px 0;
     width: 100%;
     margin-top: 2rem;
     animation: fadeIn 1s ease;
+    opacity: 30%;
 }
 
 @media (max-width: 1024px) {
@@ -324,7 +325,7 @@ footer {
 }
 
 form {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, #020202, #050505);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -348,7 +349,7 @@ form textarea {
     border: 1px solid #888;
     font-size: 1em;
     font-family: var(--font-family-secondary);
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color);
     color: var(--primary-color);
     transition: border 0.3s ease;
 }
@@ -362,7 +363,7 @@ form select:focus {
 
 form label {
     font-size: 1.2em;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     margin-bottom: 0.1rem;
 }
 
@@ -379,6 +380,7 @@ form button[type="submit"] {
 
 form button[type="submit"]:hover {
     transform: translateY(-3px);
+    background-color: #050505;
 }
 
 .toggle-button {
@@ -446,15 +448,13 @@ form button[type="submit"]:hover {
     border-radius: 8px;
     color: var(--primary-color);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 30px;
 }
 
 #carrito {
     background: linear-gradient(135deg, #020202, #050505);
     list-style: none;
     color: var(--primary-color);
-    padding: 0;
-    margin: 0;
 }
 
 #carrito li {
