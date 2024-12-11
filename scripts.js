@@ -12,6 +12,46 @@ document.addEventListener('DOMContentLoaded', () => {
     implementFadeInOnScroll();
 });
 
+    document.getElementById('login-form').addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    const validEmail = 'eve.holt@reqres.in';
+    const validPassword = 'cityslicka';
+
+    if (email !== validEmail || password !== validPassword) {
+        document.getElementById('login-message').textContent = 'Error: Credenciales inválidas.';
+        return;
+    }
+
+    try {
+        const response = await fetch('https://reqres.in/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.token) {
+            document.getElementById('login-message').textContent = 'Inicio de sesión exitoso.';
+            console.log('Token:', data.token);
+            localStorage.setItem('token', data.token); 
+            window.location.href = 'bienvenida.html';
+        } else {
+            document.getElementById('login-message').textContent = 'Error: ' + data.error;
+        }
+
+    } catch (error) {
+        document.getElementById('login-message').textContent = 'Hubo un problema al intentar iniciar sesión.';
+        console.error('Error:', error);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.querySelector('.toggle-button');
     const navLinks = document.querySelector('#nav-links');
@@ -101,9 +141,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function generarProductos() {
     const productos = [
-        { id: 1, name: "Consultoría Jurídica", description: "Asesoramiento en cuestiones legales para profesionales y negocios locales.", amount: 5000 },
-        { id: 2, name: "Diseño Web", description: "Creación de sitios web modernos y funcionales adaptados a negocios locales.", amount: 12000 },
-        { id: 3, name: "Marketing Digital", description: "Estrategias de promoción y posicionamiento online para pequeñas empresas.", amount: 8000 },
+        { id: 1, name: "Asesoría Jurídica", description: "Asesoramiento en cuestiones legales para profesionales y negocios locales.", amount: 300 },
+        { id: 2, name: "Desarrollo Web", description: "Creación de sitios web modernos y funcionales adaptados a negocios locales.", amount: 200 },
+        { id: 3, name: "Capacitación", description: "Estrategias de promoción y posicionamiento online para pequeñas empresas.", amount: 100 },
     ];
 
     console.log(productos);
@@ -179,13 +219,19 @@ function agregarAlCarrito(productoId) {
 }
 
 function eliminarDelCarrito(index) {
-    carrito.splice(index, 1);
+    const producto = carrito[index];
+    if (producto.cantidad > 1) {
+        producto.cantidad--;
+    } else {
+        carrito.splice(index, 1);
+    }
     actualizarCarrito();
 }
 
 function limpiarCarrito() {
     carrito.length = 0;
     actualizarCarrito();
+    localStorage.removeItem('carrito');
 }
 
 function inicializarBotonesCarrito() {

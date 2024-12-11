@@ -32,6 +32,32 @@
     }
 }
 
+#login-section {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#login-form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#login-message {
+    margin-top: 1rem;
+    color: red;
+}
+
 body {
     font-family: var(--font-family-primary);
     line-height: 1.6;
