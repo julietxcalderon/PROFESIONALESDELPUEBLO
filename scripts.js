@@ -1,18 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Página cargada exitosamente.');
 
+    localStorage.removeItem('carrito');
+    carrito.length = 0;
+
     activateMenuLinks();
-
     animateMessage();
-
     animateButtonClicks();
-
     smoothScrollToSections();
-
     implementFadeInOnScroll();
+    generarProductos();
+    agregarInteractividad();
+    inicializarBotonesCarrito();
 });
 
-    document.getElementById('login-form').addEventListener('submit', async function (event) {
+document.getElementById('login-form').addEventListener('submit', async function (event) {
     event.preventDefault();
 
     const email = document.getElementById('email').value;
@@ -60,12 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.toggle('active');
     });
 
-const nav = document.querySelector('nav');
+    const nav = document.querySelector('nav');
 
-toggleButton.addEventListener('click', () => {
-    nav.classList.toggle('active');
-});
-
+    toggleButton.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
 });
 
 function activateMenuLinks() {
@@ -131,14 +132,6 @@ function implementFadeInOnScroll() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Página cargada exitosamente.');
-
-    generarProductos();
-    agregarInteractividad();
-    inicializarBotonesCarrito();
-});
-
 function generarProductos() {
     const productos = [
         { id: 1, name: "Asesoría Jurídica", description: "Asesoramiento en cuestiones legales para profesionales y negocios locales.", amount: 300 },
@@ -201,8 +194,6 @@ function actualizarCarrito() {
 
     const totalElement = document.querySelector('#total');
     totalElement.textContent = `Total: $${total}`;
-
-    localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
 function agregarAlCarrito(productoId) {
@@ -260,12 +251,3 @@ function realizarCompra() {
     alert("¡Compra realizada exitosamente! =)");
     limpiarCarrito();
 }
-
-window.addEventListener('DOMContentLoaded', () => {
-    const carritoGuardado = localStorage.getItem('carrito');
-    if (carritoGuardado) {
-        const carritoArray = JSON.parse(carritoGuardado);
-        carrito.push(...carritoArray);
-        actualizarCarrito();
-    }
-});

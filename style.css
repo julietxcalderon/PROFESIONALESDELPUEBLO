@@ -34,6 +34,7 @@
 
 #login-section {
     max-width: 400px;
+    font-family: "Playfair Display";
     margin: 2rem auto;
     padding: 1rem;
     border-radius: 8px;
@@ -41,6 +42,7 @@
 }
 
 #login-form label {
+    font-family: "Playfair Display";
     display: block;
     margin-bottom: 0.5rem;
 }
@@ -55,7 +57,7 @@
 
 #login-message {
     margin-top: 1rem;
-    color: red;
+    color: #294c60;
 }
 
 body {
